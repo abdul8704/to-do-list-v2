@@ -8,7 +8,11 @@ function ToDoList() {
   const [checkedTasks, setCheckedTasks] = useState(
     new Array(tasks.length).fill(false)
   );
-
+  function handleKeyDown(e){
+    if(e.key === "Enter"){
+      handleAddTask();
+    }
+  }
   function handleAddTask() {
     if (newTask.trim() !== "") {
       setTasks((t) => [...t, newTask]);
@@ -41,6 +45,7 @@ function ToDoList() {
           placeholder="Add a new Task"
           value={newTask}
           onChange={handleEditTask}
+          onKeyDown={handleKeyDown}
           className="task-input"
         />
         <button className="addTask" onClick={handleAddTask}>
