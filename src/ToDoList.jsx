@@ -8,8 +8,8 @@ function ToDoList() {
   const [checkedTasks, setCheckedTasks] = useState(
     new Array(tasks.length).fill(false)
   );
-  function handleKeyDown(e){
-    if(e.key === "Enter"){
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
       handleAddTask();
     }
   }
